@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webtest.apps.AppConfig',
+    'webtest',
 
 ]
 
@@ -75,10 +75,21 @@ WSGI_APPLICATION = 'Autotestplat.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'autotestplat',
+        'USER': 'root',
+        'PASSWORD': 'ji10201749',
+        'HOST': 'localhost',
+        'PORT':3306,
     }
 }
 
@@ -105,9 +116,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+# TIME_ZONE = 'UTC'
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-hans'  # 中国语言
+TIME_ZONE = 'Asia/Shanghai'  # 中国时间
 
 USE_I18N = True
 
